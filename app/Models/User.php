@@ -49,4 +49,14 @@ class User extends Authenticatable
     public function todos(){
         return $this->hasMany(Todo::class, 'created_by', 'id');
     }
+
+    public function tierLists()
+    {
+        return $this->hasMany(TierList::class);
+    }
+
+    public function votes()
+    {
+        return $this->hasMany(Vote::class);
+    }
 }
